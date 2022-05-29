@@ -1,6 +1,6 @@
 # Content and Collaborative Based Movie Recommender System
 #### Video Demo
-> https://awesome-movie-recommender.herokuapp.com
+> (https://youtu.be/M7z_nLl7zk0)
 
 ![Python](https://img.shields.io/badge/Python-3.8-blueviolet)
 ![Framework](https://img.shields.io/badge/Framework-Flask-red)
@@ -31,13 +31,13 @@ This application uses <b>Content Based, item-item, KNN algorithms</b> to recomme
 
 ### Website Preview
 #### Home Page
-<img src="website_images/HomePage.png" width="900">
+<img src="web_images/HomePage.png" width="900">
 
 #### Detail Page
-<img src="website_images/DetailPage.png" width="900">
+<img src="web_images/DetailPage.png" width="900">
 
 #### List Page
-<img src="website_images/List.png" width="900">
+<img src="web_images/List.png" width="900">
 
 ----
 
