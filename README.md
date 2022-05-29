@@ -94,6 +94,6 @@ The distance metric used in this recommender is Cosine Similarity. Cosine Simila
 ---
 
 ### Sources of the datasets 
-1. [IMDB 5000 Movie Dataset](https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset)
-2. [IMDB 5000 Movie Dataset](https://www.kaggle.com/carolzhangdc/imdb-5000-credit-dataset)
+1. [TMDB 5000 Movie Dataset](https://www.kaggle.com/carolzhangdc/tmdb-5000-movie-dataset)
+2. [TMDB 5000 Movie Dataset](https://www.kaggle.com/carolzhangdc/tmdb-5000-credit-dataset)
 3. [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset)
