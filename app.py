@@ -36,6 +36,7 @@ storage = fb.database()
 
 my_api = "0826c0f9ab2e9bbfd6308fc84784e24f"
 
+#CONTENT BASED MACHINE LEARNING MODEL
 from sklearn.feature_extraction.text import CountVectorizer
 cv = CountVectorizer(max_features=5000,stop_words='english')
 vector = cv.fit_transform(movies['tags']).toarray()
