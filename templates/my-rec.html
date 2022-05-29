@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>My Recommendation</title>
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <article>
+
+      <!-- 
+        - #RECOMMEND
+      -->
+
+      <section class="tv-series">
+        <div class="container">
+
+          <p class="section-subtitle">Best Collections</p>
+
+          <h2 class="h2 section-title">Recommended Movies</h2>
+
+          <ul class="movies-list">
+            {% for i in range(length)  %}
+            <li>
+              <div class="movie-card">
+
+                <a href="#">
+                  <figure class="card-banner">
+                    <img src="{{ recommended_movie_posters[i] }}" alt="{{ recommended_movie_names[i] }}">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="#">
+                    <h3 class="card-title">{{ recommended_movie_names[i] }}</h3>
+                  </a>
+
+                  <time datetime="{{movie_dur}}">{{released_movie[i]}}</time>
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge badge-outline">2K</div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT47M">{{movie_dur[i]}}</time>
+                  </div>
+
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+
+                    <data>{{vote_mov[i]}}</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+{% endblock %}

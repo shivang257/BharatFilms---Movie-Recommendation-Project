@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{sel_title}}</title>
+{% endblock %}
+
+{% block content %}
+  <main>
+    <article>
+
+      <!-- 
+        - #MOVIE DETAIL
+      -->
+
+      <section class="movie-detail">
+        <div class="container">
+
+          <a href="{{full_vid_path}}">
+            <figure class="movie-detail-banner">
+              <img src="{{ full_pospath_url }}" alt="{{sel_title}}">
+              <button class="play-btn">
+              <ion-icon name="play-circle-outline"></ion-icon>
+              </button>
+            </figure>
+          </a>
+
+          <div class="movie-detail-content">
+
+            <h1 class="h1 detail-title">
+              <strong>{{sel_title}}</strong>
+            </h1>
+
+            <div class="meta-wrapper">
+
+              <div class="badge-wrapper">
+                <div class="badge badge-fill">PG 13</div>
+                <div class="badge badge-outline">HD</div>
+              </div>
+
+              <div class="ganre-wrapper">
+                {% for i in genres_det  %}
+                <div class="movie-card">
+                  <a>{{ i }}</a>
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="date-time">
+
+                <div>
+                  <ion-icon name="calendar-outline"></ion-icon>
+
+                  <time datetime="{{mov_year_det}}">{{mov_year_det}}</time>
+                </div>
+
+                <div>
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <time datetime="PT115M">{{mov_time_det}} min</time>
+                </div>
+
+              </div>
+
+            </div>
+
+            <p class="storyline">
+              {{mov_overview_det}}
+            </p>
+
+            
+            <button class="btn btn-primary">
+              <a href="{{full_vid_path}}">
+                <ion-icon name="play"></ion-icon>
+                <span style="display: inline;">Watch Now</span>
+              </a>
+            </button>
+            
+
+          </div>
+
+          <div>
+            <form action="{{ url_for('got_rate', val=sel_title) }}" method="POST" style="display: block;">
+              <input name="temp" type="number" class="sch-primary" placeholder="Rate" style="width: 210px;">
+              <button class="btn btn-primary">
+                <a> Rate </a>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+      <!-- 
+        - #CAST PIC
+      -->
+
+      <section class="tv-series">
+        <div class="container">
+
+          <h2 class="h2 section-title">Cast & Crew</h2>
+
+          <ul class="movies-list">
+            {% for i in range(length2)  %}
+            <li>
+              <div class="movie-card">
+
+                <a href="#">
+                  <figure class="card-banner">
+                    <img src="{{ cast_pic[i] }}" alt="{{cast_name[i]}}">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="#">
+                    <h3 class="card-title">{{cast_name[i]}}</h3>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #CONTENT RECOMMEND
+      -->
+
+      <section class="tv-series">
+        <div class="container">
+          <p class="section-subtitle">Best Collections</p>
+
+          <h2 class="h2 section-title">Content Based Recommendation</h2>
+
+          <ul class="movies-list">
+            {% for i in range(length)  %}
+            <li>
+              <div class="movie-card">
+
+                <a href="#">
+                  <figure class="card-banner">
+                    <img src="{{ recommended_movie_posters[i] }}" alt="{{ recommended_movie_names[i] }}">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="#">
+                    <h3 class="card-title">{{ recommended_movie_names[i] }}</h3>
+                  </a>
+
+                  <time datetime="{{movie_dur}}">{{released_movie[i]}}</time>
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge badge-outline">2K</div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT47M">{{movie_dur[i]}}</time>
+                  </div>
+
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+
+                    <data>{{vote_mov[i]}}</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #KNN RECOMMEND
+      -->
+
+      <section class="tv-series">
+        <div class="container">
+
+          <p class="section-subtitle">Best Collections</p>
+
+          <h2 class="h2 section-title">KNN Based Recommendation</h2>
+
+          <ul class="movies-list">
+            {% for i in range(length3)  %}
+            <li>
+              <div class="movie-card">
+
+                <a href="#">
+                  <figure class="card-banner">
+                    <img src="{{ knn_movie_posters[i] }}" alt="{{ knn_movie_names[i] }}">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="#">
+                    <h3 class="card-title">{{ knn_movie_names[i] }}</h3>
+                  </a>
+
+                  <time datetime="{{movie_dur}}">{{knn_released_movie[i]}}</time>
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge badge-outline">2K</div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT47M">{{knn_movie_dur[i]}}</time>
+                  </div>
+
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+
+                    <data>{{knn_vote_mov[i]}}</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+{% endblock %}
