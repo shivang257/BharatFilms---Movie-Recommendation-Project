@@ -31,13 +31,13 @@ This application uses <b>Content Based, item-item, KNN algorithms</b> to recomme
 
 ### Website Preview
 #### Home Page
-<img src="web_images/HomePage.png" width="900">
+<img src="web_images/HomePage.PNG" width="900">
 
 #### Detail Page
-<img src="web_images/DetailPage.png" width="900">
+<img src="web_images/DetailPage.PNG" width="900">
 
 #### List Page
-<img src="web_images/List.png" width="900">
+<img src="web_images/List.PNG" width="900">
 
 ----
 
