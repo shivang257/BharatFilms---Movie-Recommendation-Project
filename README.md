@@ -72,6 +72,9 @@ Numpy , Pandas , Scipy
 #### Database
 Firebase
 
+#### User Authentication
+Firebase
+
 ---
 
 ### Algorithms Used
